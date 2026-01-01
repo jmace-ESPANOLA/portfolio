@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="brent.css">
+  <script src="brent1js"></script>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('settings')">Settings</a>
+      <a onclick="showSection('pictures')">Pictures</a>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="home" class="active"> <!-- show Home by default -->
+    <h2>brentoy</h2>
+    <img src="Images/background.jpg" alt="Profile picture">
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Brent Rhymen Crisantine Constantino Española.</p>
+  </section>
+
+  <section id="settings">
+    <h2>Settings</h2>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </section>
+
+  <section id="pictures">
+    <h2>My Pictures</h2>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <div id="gallery"></div>
+  </section>
+
+ 
+</body>
+</html>
+
