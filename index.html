@@ -1,51 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BRCCE</title>
-  <link rel="stylesheet" href="brent.css">
-  <script src="brent1.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jose Miguel Angelo C. Española</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-</head>
-<body>
-  <header>
-    <h1>BB-LAB • lab-lab</h1>
-    <nav>
-      <a onclick="showSection('home')">Home</a>
-      <a onclick="showSection('about')">About</a>
-      <a onclick="showSection('settings')">Settings</a>
-      <a onclick="showSection('pictures')">Pictures</a>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <div class="logo">jmace</div>
 
-  <!-- Sections -->
-  <section id="home" class="active"> <!-- show Home by default -->
-    <h2>brentoy</h2>
-    <img src="Images/background.jpg" alt="Profile picture">
-  </section>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Brent Rhymen Crisantine Constantino Española.</p>
-  </section>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#education" onclick="toggleMenu()">Education Background</a>
+        <a href="#achievements" onclick="toggleMenu()">Achievements</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+      </nav>
+    </header>
 
-  <section id="settings">
-    <h2>Settings</h2>
-    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-  </section>
+    <main>
+      <div class="profile-container">
+        <div class="profile-text">
+          <h2>Jose Miguel Angelo C. Española</h2>
+          <p>
+            Welcome to my portfolio! I am a passionate web developer creating
+            fast, modern, and beautiful websites.
+          </p>
+        </div>
 
-  <section id="pictures">
-    <h2>My Pictures</h2>
-    <input type="file" id="fileInput" accept="image/*" multiple>
-    <div id="gallery"></div>
-  </section>
+        <div class="profile-image">
+          <img src="./Images/xample.png" alt="Jose Miguel Angelo C. Española" />
+        </div>
+      </div>
+    </main>
 
- 
-</body>
+    <footer>
+      <p>&copy; 2026 Jose Miguel Angelo C. Española. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
-
-
-
-
-
