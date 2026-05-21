@@ -1,0 +1,187 @@
+/* 1. THE MAIN WRAPPER */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Solid black background */
+  color: #ffffff; /* Makes all text white by default */
+  font-family: sans-serif;
+
+  /* Flexbox settings to create a top-to-bottom layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the body to fill the whole screen height */
+}
+
+/* 2. THE HEADER (Stays perfectly at the top) */
+header {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Puts logo on the left, navigation menu/hamburger on the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222; /* Adds a nice dark grey line under the header */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase; /* Makes "jmace" look clean in all caps */
+}
+
+/* 3. THE MAIN CONTENT (Side-by-Side Layout) */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centers the profile container on the screen */
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* The wrapper holding both your text column and your image column */
+.profile-container {
+  display: flex;
+  flex-direction: row; /* Keeps them sitting next to each other */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px; /* Keeps the content from stretching too wide on huge monitors */
+  width: 100%;
+  gap: 50px; /* Adds breathing room between your bio and your photo */
+}
+
+/* Left side (Text column) */
+.profile-text {
+  flex: 1; /* Takes up 50% of the space */
+  text-align: left; /* Clean left-alignment for your bio */
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 0; /* Prevents weird spacing issues at the top */
+  margin-bottom: 20px;
+}
+
+main p {
+  color: #aaa; /* Brightened up so it pops cleanly off the pure black background */
+  font-size: 1.2em;
+  margin: 0;
+  line-height: 1.6; /* Spreads lines apart slightly so it's easier to read */
+}
+
+/* Right side (Image column) */
+.profile-image {
+  flex: 1; /* Takes up the other 50% of the space */
+  display: flex;
+  justify-content: center; /* Centers your image inside its column */
+}
+
+.profile-image img {
+  width: 340px; /* Scales width cleanly */
+  height: 420px; /* Matches the vertical scale ratio of your artwork */
+  object-fit: cover; /* Prevents stretching out of proportion */
+  border-radius: 12px; /* Smooth rounded corners */
+  border: none;
+}
+
+/* 4. THE FOOTER (Glued to the bottom) */
+footer {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-top: 1px solid #222; /* Adds a matching dark grey line above footer */
+  color: #666; /* Muted text color for the copyright statement */
+  font-size: 0.9em;
+}
+
+/* 5. THE HAMBURGER & NAVIGATION MENU (Replaced old button styles) */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 100; /* Keeps the icon visible on top of the menu overlay */
+}
+
+/* 5. INSTAGRAM-STYLE LIST NAVIGATION MENU */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px; /* Sleek, thin bar size */
+  height: 18px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px; /* Clean, modern minimalist lines */
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* The slide-out container panel */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden off-screen to the right */
+  width: 300px;
+  height: 100vh;
+  background-color: #121212; /* Exact Instagram Dark-Mode Background */
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px; /* Gives room so the logo/hamburger aren't covered */
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Slide it into view when clicked */
+.nav-menu.active {
+  right: 0;
+}
+
+/* Styling the links to look exactly like rows in Instagram Settings */
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem; /* Instagram uses slightly smaller, crisp text */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif; /* Instagram's font stack */
+  padding: 16px 20px;
+  border-bottom: 1px solid #262626; /* The clean, thin Instagram separator line */
+  transition: background-color 0.2s ease;
+}
+
+/* Light background highlight when you hover over a setting row */
+.nav-menu a:hover {
+  background-color: #1c1c1e; /* Subtle gray highlight */
+  color: #ffffff; /* Keeps text white */
+}
+
+/* Optional: If you want to put text emojis or icons inside the <a> tags later */
+.nav-menu a span {
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+/* 6. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+  .profile-text {
+    text-align: center;
+  }
+}
